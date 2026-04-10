@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PdfIcon = ({ className = "h-5 w-5" }) => (
   <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -85,6 +86,7 @@ function ResourceCard({ item }) {
 }
 
 export default function NotexaResourcesPage() {
+  const navigate = useNavigate();
   const subject = {
     category: "Advanced Sciences",
     title: "Molecular Biology",
@@ -126,7 +128,7 @@ export default function NotexaResourcesPage() {
 
             <button
               type="button"
-              onClick={() => {}}
+              onClick={() => navigate("/mcq")}
               className="inline-flex items-center justify-center gap-2 rounded-2xl bg-indigo-500 px-4 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/10 transition hover:bg-indigo-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
             >
               <SparkIcon className="h-5 w-5" />

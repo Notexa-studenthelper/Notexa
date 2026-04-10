@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import {NavLink} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import subjects from "../data/SubjectData"
 const Icon = ({ name, className = "h-5 w-5" }) => {
   switch (name) {
     case "chevronRight":
@@ -90,7 +92,9 @@ const Badge = ({ tone = "indigo", children }) => {
   );
 };
 
-const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description }) => (
+const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description,id }) => {
+  const navigate = useNavigate();
+  return(
   <article className="relative h-[310px] rounded-3xl border border-transparent bg-white shadow-[0_1px_0_rgba(0,0,0,0.02)] ring-1 ring-black/0">
     <div className="h-full p-[33px]">
       <div className="flex items-start justify-between">
@@ -102,9 +106,11 @@ const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description }) => 
 
       <h3 className="mt-[64px] text-[24px] font-bold leading-8 tracking-[-0.01em] text-[#2D3335]">{title}</h3>
       <p className="mt-2 max-w-[32ch] text-[15px] leading-6 text-[#5A6062]">{description}</p>
-
-      <button
-        type="button"
+      
+      
+         <button
+         onClick={()=> navigate(`/resources`)}
+        type="button" 
         className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-[#5044E3] hover:text-[#3E34C8]"
       >
         Open Subject
@@ -114,7 +120,7 @@ const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description }) => 
       <div className="pointer-events-none absolute right-6 bottom-6 h-20 w-24 rounded-2xl bg-[#5044E3]/[0.05]" />
     </div>
   </article>
-);
+)};
 
 const Sidebar = () => (
   <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:block lg:w-64 lg:bg-[#F8FAFC] lg:p-4">
@@ -176,7 +182,7 @@ const TopNav = ({ search, setSearch }) => (
   <header className="sticky top-0 z-30 w-full bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0px_1px_0_rgba(15,23,42,0.06)]">
     <div className="mx-auto flex h-[84px] max-w-[1280px] items-center justify-between px-4 sm:px-6">
       <div className="flex items-center gap-6">
-        <div className="text-[18px] font-extrabold tracking-tight text-[#2D3335]">Notexa</div>
+        <NavLink to="/"><div className="text-[18px] font-extrabold tracking-tight text-[#2D3335]">Notexa</div></NavLink>
         <nav className="hidden items-center gap-6 md:flex">
           <a href="#" className="text-[14px] font-semibold text-[#5A6062] hover:text-[#2D3335]">
             Dashboard
@@ -256,53 +262,7 @@ const FeaturedSection = () => (
 export default function LandingPage() {
   const [search, setSearch] = useState("");
 
-  const subjects = useMemo(
-    () => [
-      {
-        accentBg: "#EEF2FF",
-        badgeTone: "indigo",
-        badgeText: "12 Chapters",
-        title: "Literature & Arts",
-        description: "Explore the depth of classical prose, poetry, and modern creative movements.",
-      },
-      {
-        accentBg: "rgba(108,99,255,0.10)",
-        badgeTone: "purple",
-        badgeText: "8 Courses",
-        title: "Computer Science",
-        description: "Master algorithms, data structures, and the architecture of modern software.",
-      },
-      {
-        accentBg: "rgba(255,209,220,0.30)",
-        badgeTone: "rose",
-        badgeText: "Active",
-        title: "Modern Physics",
-        description: "From quantum mechanics to general relativity, understand the laws of existence.",
-      },
-      {
-        accentBg: "#FFFBEB",
-        badgeTone: "amber",
-        badgeText: "New Content",
-        title: "Advanced Calculus",
-        description: "Deep dive into limits, derivatives, and multidimensional integration theories.",
-      },
-      {
-        accentBg: "#FFF1F2",
-        badgeTone: "rose",
-        badgeText: "MCQ Available",
-        title: "Organic Biology",
-        description: "Study the living systems, cellular structures, and the evolution of species.",
-      },
-      {
-        accentBg: "#ECFDF5",
-        badgeTone: "green",
-        badgeText: "Popular",
-        title: "Macroeconomics",
-        description: "Analyze market dynamics, global trade flows, and fiscal policy impact.",
-      },
-    ],
-    []
-  );
+  
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] text-[#2D3335]">
@@ -344,7 +304,7 @@ export default function LandingPage() {
                     return (s.title + " " + s.description + " " + s.badgeText).toLowerCase().includes(q);
                   })
                   .map((s) => (
-                    <SubjectCard key={s.title} {...s} />
+                    <SubjectCard key={s.id} {...s} />
                   ))}
               </div>
             </section>
