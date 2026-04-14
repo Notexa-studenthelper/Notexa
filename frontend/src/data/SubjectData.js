@@ -1,6 +1,6 @@
 const subjects = [
   {
-    id: "1",
+    subjectId: "1",
     accentBg: "#EEF2FF",
     badgeTone: "indigo",
     badgeText: "Core",
@@ -8,7 +8,7 @@ const subjects = [
     description: "Learn arrays, linked lists, stacks, queues, trees, and graphs with problem-solving.",
   },
   {
-    id: "2",
+    subjectId: "2",
     accentBg: "rgba(108,99,255,0.10)",
     badgeTone: "purple",
     badgeText: "Core",
@@ -16,7 +16,7 @@ const subjects = [
     description: "Understand OOP concepts like classes, inheritance, polymorphism using Java/C++.",
   },
   {
-    id: "3",
+    subjectId: "3",
     accentBg: "rgba(255,209,220,0.30)",
     badgeTone: "rose",
     badgeText: "Important",
@@ -24,7 +24,7 @@ const subjects = [
     description: "Study logic, sets, relations, graphs, and combinatorics for computer science.",
   },
   {
-    id: "4",
+    subjectId: "4",
     accentBg: "#FFFBEB",
     badgeTone: "amber",
     badgeText: "Core",
@@ -32,7 +32,7 @@ const subjects = [
     description: "Learn SQL, normalization, transactions, and database design concepts.",
   },
   {
-    id: "5",
+    subjectId: "5",
     accentBg: "#FFF1F2",
     badgeTone: "rose",
     badgeText: "Practical",
@@ -40,7 +40,7 @@ const subjects = [
     description: "Understand processes, memory management, scheduling, and file systems.",
   },
   {
-    id: "6",
+    subjectId: "6",
     accentBg: "#ECFDF5",
     badgeTone: "green",
     badgeText: "Networking",
@@ -48,7 +48,7 @@ const subjects = [
     description: "Learn OSI model, TCP/IP, routing, protocols, and network security basics.",
   },
   {
-    id: "7",
+    subjectId: "7",
     accentBg: "#EEF2FF",
     badgeTone: "indigo",
     badgeText: "Maths",
@@ -56,7 +56,7 @@ const subjects = [
     description: "Topics include PDE, Fourier series, Laplace transforms, and complex analysis.",
   },
   {
-    id: "8",
+    subjectId: "8",
     accentBg: "rgba(108,99,255,0.10)",
     badgeTone: "purple",
     badgeText: "Theory",
@@ -64,7 +64,7 @@ const subjects = [
     description: "Learn automata, regular languages, Turing machines, and computability.",
   },
   {
-    id: "9",
+    subjectId: "9",
     accentBg: "#FFFBEB",
     badgeTone: "amber",
     badgeText: "Lab",
@@ -72,7 +72,7 @@ const subjects = [
     description: "Implement data structures and algorithms through practical coding exercises.",
   },
   {
-    id: "10",
+    subjectId: "10",
     accentBg: "#ECFDF5",
     badgeTone: "green",
     badgeText: "Elective",

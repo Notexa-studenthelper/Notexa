@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import {NavLink} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import subjects from "../data/SubjectData"
+
 const Icon = ({ name, className = "h-5 w-5" }) => {
   switch (name) {
     case "chevronRight":
@@ -92,8 +93,9 @@ const Badge = ({ tone = "indigo", children }) => {
   );
 };
 
-const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description,id }) => {
+const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description,subjectId }) => {
   const navigate = useNavigate();
+  
   return(
   <article className="relative h-[310px] rounded-3xl border border-transparent bg-white shadow-[0_1px_0_rgba(0,0,0,0.02)] ring-1 ring-black/0">
     <div className="h-full p-[33px]">
@@ -109,7 +111,7 @@ const SubjectCard = ({ accentBg, badgeTone, badgeText, title, description,id }) 
       
       
          <button
-         onClick={()=> navigate(`/resources`)}
+         onClick={()=> navigate(`/resources/${subjectId}`)}
         type="button" 
         className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-[#5044E3] hover:text-[#3E34C8]"
       >
@@ -304,7 +306,7 @@ export default function LandingPage() {
                     return (s.title + " " + s.description + " " + s.badgeText).toLowerCase().includes(q);
                   })
                   .map((s) => (
-                    <SubjectCard key={s.id} {...s} />
+                    <SubjectCard key={s.subjectId} {...s} />
                   ))}
               </div>
             </section>

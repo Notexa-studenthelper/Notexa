@@ -9,9 +9,9 @@ function App(){
     
    <BrowserRouter>
    <Routes>
-    <Route path="/"  element={<LandingPage></LandingPage>}/>
-    <Route path="/login"  element={<LoginPage></LoginPage>}/>
-    <Route path="/resources"  element={<Resources/>}/>
+    <Route path="/landingpage"  element={<LandingPage></LandingPage>}/>
+    <Route path="/"  element={<LoginPage></LoginPage>}/>
+    <Route path="/resources/:id"  element={<Resources/>}/>
     <Route path="/mcq"  element={<MCQPracticePage></MCQPracticePage>}/>
    </Routes>
    </BrowserRouter>
