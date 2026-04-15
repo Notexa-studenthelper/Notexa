@@ -26,6 +26,7 @@ function LoginPage(){
 };
     return(
         <>
+        <div>Hey i am login page</div>
         <div className="bg-[#ffff] w-screen h-screen flex items-center justify-center ">
             <div className="  w-[500px] h-[600px] flex justify-center  flex-col items-center gap-2">
                 <img src="/LoginLogo.png" alt="" className="w-[64px] h-[64px] align-center" />
