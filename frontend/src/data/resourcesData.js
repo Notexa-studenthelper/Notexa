@@ -159,7 +159,6 @@ export const resources = [
     ],
   },
 
-  // ✅ Added your new subject
   {
     subjectId: "11",
     subject: {
@@ -171,6 +170,10 @@ export const resources = [
     notes: [],
     pyqs: [],
   },
-];
+]
+
+{
+
+}
 
 export default resources;
